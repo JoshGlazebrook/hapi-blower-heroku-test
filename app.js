@@ -1,6 +1,6 @@
 var hapi = require('hapi');
 
-var server = new hapi.Server(3000);
+var server = new hapi.Server(process.env.PORT);
 
 
 server.route([
