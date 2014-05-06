@@ -4,7 +4,8 @@ var server = new hapi.Server(process.env.PORT);
 
 
 server.route([
-    { method: 'GET', path: '/test', config: { handler: doTest }}
+    { method: 'GET', path: '/test', config: { handler: doTest }},
+    { method: 'GET', path: '/names', config: { handler: listofcrap }}
 ]);
 
 function doTest(req, res) {
