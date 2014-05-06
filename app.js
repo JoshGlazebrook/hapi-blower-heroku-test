@@ -11,7 +11,15 @@ function doTest(req, res) {
     res("Something");
 }
 
+function listofcrap(req, res) {
+    var crap = [
+        {name: "Josh", age: 22},
+        {name: "Bob", age: 40},
+        {name: "whatever", age: 19}
+    ];
 
+    res(crap);
+}
 
 server.start(function() {
     console.log("Server started");
