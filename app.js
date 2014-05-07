@@ -12,9 +12,25 @@ server.route([
 
 
 function sendMessage(req, res) {
-// curl -X POST -d "to=+14155550000&message=This is a test from Blower.io" -H "Accept: application/json" https://0e4fbd3a-37d3-4639-86d6-17920cf903f5:Tt8pSc7CbgHul3aPgCLevg@api.blower.io/messages
-    console.log(process.env);
-    res(process.env);
+
+
+    var message = "finish the fucking project";
+
+    var numbers = [
+        '4257738068',
+        '3605562243',
+        '2066975995',
+        '2064035209'
+    ];
+
+    numbers.forEach(function(item) {
+        request.post(process.env.BLOWERIO_URL + '/messages', { form: { to: item, message: message }, headers: { 'Accept': 'application/json' } }, function (err, res, body) {
+            console.log(body);
+        });
+
+        res("messages sent");
+    });
+
 }
 
 function doTest(req, res) {
